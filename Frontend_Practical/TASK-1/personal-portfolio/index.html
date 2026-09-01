@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #111313;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+     /*=======================================
+              Page
+    =============================================*/
+     .page{
+            width: 100%;
+            background-color: #111313;
+        }
+     section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px;
+        }
+
+
+        /*=================================== 
+              LOGO
+        ======================================*/
+         .logo {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 28px;
+
+            letter-spacing: 2px;
+
+            color: #a51c2f;
+        }
+
+        /*===================================
+                 NAVIGATION
+       =====================================*/
+ nav {
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            background-color: #111313;
+
+            border-bottom: 1px solid #333;
+
+            padding: 20px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+        }
+
+
+        nav ul li a {
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+
+            color: #a51c2f;
+        }
+         /* =====================================================
+           MAIN SECTION
+        ===================================================== */
+
+        .main {
+
+            min-height: 650px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+
+        .main-image {
+
+            width: 330px;
+
+            height: 410px;
+
+            padding: 12px;
+
+            border: 12px solid #95182b;
+        }
+
+
+        .main-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .main-text {
+
+            max-width: 600px;
+        }
+
+
+        .main-text h1 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 75px;
+
+            line-height: 0.95;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .main-text h1 span {
+
+            color: #a51c2f;
+
+            display: block;
+        }
+
+
+        .main-text p {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
+
+        .main-buttons {
+
+            margin-top: 30px;
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border: 1px solid #a51c2f;
+
+            margin-right: 10px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+
+            background-color: #a51c2f;
+        }
+
+
+        .button.red {
+
+            background-color: #a51c2f;
+        }
+
+
+   /*========================================
+         SECTION
+ ============================================*/
+   .section-title {
+
+            text-align: center;
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 38px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 50px;
+        }
+
+/*=============================================
+       ABOUT
+==============================================*/
+ .about {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-text p {
+
+            color: #bbb;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-info {
+
+            border-left: 2px solid #a51c2f;
+
+            padding-left: 30px;
+        }
+
+
+        .info {
+
+            margin-bottom: 20px;
+        }
+
+
+        .info small {
+
+            color: #a51c2f;
+
+            display: block;
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .info p {
+
+            font-size: 16px;
+
+            font-weight: bold;
+        }
+       
+          /*=================================================
+               QUICK BACKGROUND 
+            ==================================================*/
+ .background-section {
+
+            border-top: 1px solid #333;
+
+            border-bottom: 1px solid #333;
+        }
+
+
+        .background-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .background-box {
+
+            border: 1px solid #555;
+
+            min-height: 180px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            transition: 0.3s;
+        }
+
+
+        .background-box:hover {
+
+            border-color: #a51c2f;
+
+            transform: translateY(-5px);
+        }
+
+
+        .background-box small {
+
+            color: #a51c2f;
+
+            font-size: 12px;
+
+            margin-bottom: 18px;
+
+            font-weight: bold;
+        }
+
+
+        .background-box h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 25px;
+
+            line-height: 1.1;
+        }
+
+        /*===============================================
+               SKILLS
+    ===================================================*/
+         .skills {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .skill {
+
+            background-color: #151717;
+
+            border: 1px solid #333;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+
+        .skill:hover {
+
+            border-color: #a51c2f;
+
+            transform: translateY(-5px);
+        }
+
+
+        .skill h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .skill p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        .skill-level {
+
+            color: #a51c2f;
+
+            margin-top: 15px;
+
+            font-size: 18px;
+        }
+
+  /* =====================================================
+           CREATIVE WORK
+        ===================================================== */
+
+        .creative {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 60px;
+        }
+
+
+        .creative-title {
+
+            width: 260px;
+
+            flex-shrink: 0;
+        }
+
+
+        .creative-title h2 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 38px;
+
+            line-height: 1.05;
+        }
+
+
+        .work-grid {
+
+            flex: 1;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+        }
+
+
+        .work-grid img {
+
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+
+            transition: 0.3s;
+        }
+
+
+        .work-grid img:hover {
+
+            transform: scale(1.03);
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .project {
+
+            border: 1px solid #444;
+
+            padding: 30px;
+
+            min-height: 270px;
+
+            transition: 0.3s;
+        }
+
+
+        .project:hover {
+
+            border-color: #a51c2f;
+
+            transform: translateY(-7px);
+        }
+
+
+        .project-number {
+
+            color: #a51c2f;
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project p {
+
+            color: #aaa;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .project-tech {
+
+            color: #a51c2f;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .project a {
+
+            border-bottom: 1px solid #a51c2f;
+
+            padding-bottom: 5px;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           DSA / LEETCODE
+        ===================================================== */
+
+        .dsa {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        .dsa-text h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .dsa-text p {
+
+            color: #aaa;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        .dsa-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .stat {
+
+            border: 1px solid #444;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .stat h3 {
+
+            color: #a51c2f;
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 40px;
+        }
+
+
+        .stat p {
+
+            color: #aaa;
+
+            margin-top: 8px;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           FUN FACTS
+        ===================================================== */
+
+        .facts {
+
+            border-top: 1px solid #444;
+
+            border-bottom: 1px solid #444;
+        }
+
+
+        .fact {
+
+            display: grid;
+
+            grid-template-columns: 40% 60%;
+
+            border-top: 1px solid #4b1b22;
+
+            min-height: 100px;
+
+            align-items: center;
+        }
+
+
+        .fact-left {
+
+            padding: 20px;
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 22px;
+        }
+
+
+        .fact-right {
+
+            padding: 20px;
+
+            color: #a51c2f;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education {
+
+            border-left: 2px solid #a51c2f;
+
+            padding-left: 40px;
+        }
+
+
+        .education-item {
+
+            margin-bottom: 45px;
+
+            position: relative;
+        }
+
+
+        .education-item::before {
+
+            content: "";
+
+            width: 14px;
+
+            height: 14px;
+
+            background-color: #a51c2f;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            left: -48px;
+
+            top: 5px;
+        }
+
+
+        .education-item span {
+
+            color: #a51c2f;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        .education-item h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 25px;
+
+            margin: 10px 0;
+        }
+
+
+        .education-item p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           ACHIEVEMENTS
+        ===================================================== */
+
+        .achievements {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .achievement {
+
+            border: 1px solid #444;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .achievement h3 {
+
+            color: #a51c2f;
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .achievement p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           CERTIFICATES
+        ===================================================== */
+
+        .certificates {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .certificate {
+
+            border: 1px solid #444;
+
+            padding: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .certificate h3 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 22px;
+        }
+
+
+        .certificate p {
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            margin-top: 7px;
+        }
+
+
+        .certificate span {
+
+            color: #a51c2f;
+
+            font-size: 22px;
+        }
+
+
+        /* =====================================================
+           THINGS I LOVE
+        ===================================================== */
+
+        .love-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 30px;
+        }
+
+
+        .love-header h2 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 32px;
+        }
+
+
+        .love-header p {
+
+            color: #a51c2f;
+
+            max-width: 250px;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        .love-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .love-grid img {
+
+            width: 100%;
+
+            height: 200px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           CURRENTLY LEARNING
+        ===================================================== */
+
+        .learning {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        .learning span {
+
+            border: 1px solid #555;
+
+            padding: 15px 25px;
+
+            color: #ddd;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .learning span:hover {
+
+            background-color: #a51c2f;
+
+            border-color: #a51c2f;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+            border-top: 1px solid #444;
+        }
+
+
+        .contact-left h2 {
+
+            font-family: Impact,
+                         "Arial Narrow",
+                         sans-serif;
+
+            font-size: 45px;
+
+            line-height: 1.05;
+
+            color: #a51c2f;
+        }
+
+
+        .contact-left p {
+
+            color: #aaa;
+
+            margin-top: 20px;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+        }
+
+
+        .contact-item {
+
+            margin-bottom: 30px;
+        }
+
+
+        .contact-item small {
+
+            display: block;
+
+            color: #aaa;
+
+            font-size: 11px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .contact-item a {
+
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+
+        .contact-item a:hover {
+
+            color: #a51c2f;
+        }
+
+
+        /* =====================================================
+           SOCIAL
+        ===================================================== */
+
+        .social {
+
+            display: flex;
+
+            gap: 15px;
+        }
+
+
+        .social a {
+
+            width: 40px;
+
+            height: 40px;
+
+            border: 1px solid white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .social a:hover {
+
+            background-color: #a51c2f;
+
+            border-color: #a51c2f;
+        }
+
+
+       
+
+      
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav>
+<div class="logo">
+            MY PORTFOLIO...
+        </div>
+       <ul>
+        <li>
+            <a href="#home">HOME</a>
+        </li>
+         <li>
+                <a href="#about">ABOUT</a>
+            </li>
+
+            <li>
+                <a href="#skills">SKILLS</a>
+            </li>
+
+            <li>
+                <a href="#projects">PROJECTS</a>
+            </li>
+
+            <li>
+                <a href="#education">EDUCATION</a>
+            </li>
+
+            <li>
+                <a href="#contact">CONTACT</a>
+            </li>
+       </ul>
+        </nav>
+
+        <!--==================================
+              HOME 
+       =======================================-->
+        <section class="main" id="home">
+              <div class="main-image">
+
+            <img src="image/port.pic.jpeg"
+                 alt="Aparna">
+
+        </div>
+
+
+        <div class="main-text">
+
+            <h1>
+
+                HI EVERYONE,
+
+                <br>
+
+                MY NAME IS
+
+                <span>APARNA DIXIT</span>
+
+            </h1>
+
+
+            <p>
+
+                I'M AN ASPIRING SOFTWARE DEVELOPER
+
+            </p>
+
+
+            <div class="main-buttons">
+
+                <a href="#projects"
+                   class="button red">
+
+                    VIEW MY WORK
+
+                </a>
+
+
+                <a href="#contact"
+                   class="button">
+
+                    CONTACT ME
+
+                </a>
+
+            </div>
+
+        </div>
+
+        </section>
+
+        <!--  =======================================
+               ABOUT
+        ==============================================  -->
+        <section id="about">
+
+
+        <h2 class="section-title">
+
+            ABOUT <span class="red">ME</span>
+
+        </h2>
+
+
+        <div class="about">
+
+
+            <div class="about-text">
+
+                <h3>
+
+                    WHO AM I?
+
+                </h3>
+
+
+                <p>
+
+                    Hello! I'm Aparna, a student and
+                    aspiring software developer who
+                    enjoys building things with code.
+
+                </p>
+
+
+                <p>
+
+                    I am currently learning programming,
+                    web development and Data Structures
+                    & Algorithms.
+
+                </p>
+
+
+                <p>
+
+                    I enjoy solving problems, creating
+                    projects and learning something new
+                    every day.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+
+                <div class="info">
+
+                    <small>NAME</small>
+
+                    <p>Aparna Dixit</p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>ROLE</small>
+
+                    <p>Student</p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>MAIN LANGUAGE</small>
+
+                    <p>Java</p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>INTERESTS</small>
+
+                    <p>DSA • Web Development</p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <!-- =================================================
+         QUICK BACKGROUND
+    ================================================== -->
+
+    <section class="background-section">
+
+
+        <h2 class="section-title">
+
+            A QUICK <span class="red">BACKGROUND</span>
+
+        </h2>
+
+
+        <div class="background-grid">
+
+
+            <div class="background-box">
+
+                <small>BASED IN</small>
+
+                <h3>INDIA</h3>
+
+            </div>
+
+
+            <div class="background-box">
+
+                <small>CURRENTLY</small>
+
+                <h3>
+                    STUDYING
+                    <br>
+                    COMPUTER SCIENCE
+                </h3>
+
+            </div>
+
+
+            <div class="background-box">
+
+                <small>MY ROLES</small>
+
+                <h3>
+                    STUDENT
+                    <br>
+                    DEVELOPER
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
+
+    <section id="skills">
+
+
+        <h2 class="section-title">
+
+            MY <span class="red">SKILLS</span>
+
+        </h2>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <h3>JAVA</h3>
+
+                <p>
+
+                    My primary programming language.
+                    I use Java for DSA, problem solving
+                    and programming projects.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★★☆
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>HTML</h3>
+
+                <p>
+
+                    I use HTML to create the structure
+                    of websites and personal projects.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>CSS</h3>
+
+                <p>
+
+                    Currently learning basic styling,
+                    layouts, colors and responsive
+                    web design.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★★☆
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>DSA</h3>
+
+                <p>
+
+                    Practicing arrays, strings,
+                    searching, sorting and other
+                    data structures.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★★☆
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>GITHUB</h3>
+
+                <p>
+
+                    Learning how to manage projects,
+                    upload code and work with Git.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★☆☆
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>PROBLEM SOLVING</h3>
+
+                <p>
+
+                    I regularly practice programming
+                    problems to improve my logical
+                    thinking.
+
+                </p>
+
+                <div class="skill-level">
+                    ★★★★☆
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+ <!-- =================================================
+         PROJECTS
+    ================================================== -->
+
+    
+    <section id="projects">
+
+
+        <h2 class="section-title">
+
+            FEATURED <span class="red">PROJECTS</span>
+
+        </h2>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    01
+                </div>
+
+
+                <h3>
+                    ANIME VERSE
+                </h3>
+
+
+                <p>
+
+                    A dark themed anime website created
+                    using HTML and basic CSS. The website
+                    contains anime information and a
+                    simple navigation system.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    HTML • CSS
+
+                </div>
+
+
+                <a href="anime-verse/" target="_blank">
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    02
+                </div>
+
+
+                <h3>
+                    PERSONAL PORTFOLIO
+                </h3>
+
+
+                <p>
+
+                    A personal portfolio website designed
+                    to showcase my skills, projects,
+                    education and achievements.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    HTML • CSS
+
+                </div>
+
+
+                <a href="#">
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+  <div class="project">
+
+                <div class="project-number">
+                    03
+                </div>
+
+
+                <h3>
+                    JAVA PROJECT
+                </h3>
+
+
+                <p>
+
+                    A beginner Java project created to
+                    practice programming concepts,
+                    logic building and object-oriented
+                    programming.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    JAVA
+
+                </div>
+
+
+                <a href="#">
+                    VIEW PROJECT →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         DSA
+    ================================================== -->
+
+    <section>
+
+
+        <h2 class="section-title">
+
+            MY <span class="red">DSA JOURNEY</span>
+
+        </h2>
+
+
+        <div class="dsa">
+
+
+            <div class="dsa-text">
+
+                <h3>
+
+                    BUILDING MY
+                    <span class="red">
+                        LOGICAL THINKING
+                    </span>
+
+                </h3>
+
+
+                <p>
+
+                    I regularly practice Data Structures
+                    and Algorithms to improve my problem
+                    solving skills.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    My current focus includes arrays,
+                    strings, searching, sorting and
+                    gradually moving towards more
+                    advanced data structures.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="dsa-stats">
+
+
+                <div class="stat">
+
+                    <h3>50+</h3>
+
+                    <p>
+                        PROBLEMS SOLVED
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>JAVA</h3>
+
+                    <p>
+                        MAIN LANGUAGE
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>DSA</h3>
+
+                    <p>
+                        CURRENT FOCUS
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>∞</h3>
+
+                    <p>
+                        THINGS TO LEARN
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FUN FACTS
+    ================================================== -->
+
+    <section class="facts">
+
+
+        <h2 class="section-title">
+
+            THREE <span class="red">FUN FACTS</span>
+
+        </h2>
+
+
+        <div class="fact">
+
+
+            <div class="fact-left">
+
+                I STARTED
+                <br>
+                FROM THE BASICS.
+
+            </div>
+
+
+            <div class="fact-right">
+
+                My programming journey started with
+                basic concepts and slowly moved towards
+                problem solving and projects.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="fact">
+
+
+            <div class="fact-left">
+
+                I LOVE
+                <br>
+                SOLVING PROBLEMS.
+
+            </div>
+
+
+            <div class="fact-right">
+
+                Coding problems challenge me to think
+                differently and find better solutions.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="fact">
+
+
+            <div class="fact-left">
+
+                I AM ALWAYS
+                <br>
+                LEARNING.
+
+            </div>
+
+
+            <div class="fact-right">
+
+                There is always something new to learn
+                in programming and technology.
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <!-- =================================================
+         EDUCATION
+    ================================================== -->
+
+    <section id="education">
+
+
+        <h2 class="section-title">
+
+            MY <span class="red">EDUCATION</span>
+
+        </h2>
+
+
+        <div class="education">
+
+
+            <div class="education-item">
+
+                <span>
+                    2025 — 2029
+                </span>
+
+
+                <h3>
+                    BACHELOR'S DEGREE
+                </h3>
+
+
+                <p>
+
+                    Currently pursuing my degree and
+                    developing my programming,
+                    problem solving and technical skills.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="education-item">
+
+                <span>
+                    2025
+                </span>
+
+
+                <h3>
+                    CLASS XII
+                </h3>
+
+
+                <p>
+
+                    Completed Class XII from CBSE Board.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="education-item">
+
+                <span>
+                    2023
+                </span>
+
+
+                <h3>
+                    CLASS X
+                </h3>
+
+
+                <p>
+
+                    Completed Class X from CBSE Board.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+ 
+
+
+
+    <!-- =================================================
+         CERTIFICATES
+    ================================================== -->
+
+    <section>
+
+
+        <h2 class="section-title">
+
+            MY <span class="red">CERTIFICATES</span>
+
+        </h2>
+
+
+        <div class="certificates">
+
+
+            <div class="certificate">
+
+                <div>
+
+                    <h3>
+                        JAVA PROGRAMMING
+                    </h3>
+
+                    
+                </div>
+
+                <span>
+                    01
+                </span>
+
+            </div>
+
+
+
+            <div class="certificate">
+
+                <div>
+
+                    <h3>
+                        WEB DEVELOPMENT
+                    </h3>
+
+                   
+                </div>
+
+                <span>
+                    02
+                </span>
+
+            </div>
+
+
+
+            <div class="certificate">
+
+                <div>
+
+                    <h3>
+                        DSA
+                    </h3>
+
+                   
+
+                </div>
+
+                <span>
+                    03
+                </span>
+
+            </div>
+
+
+
+            <div class="certificate">
+
+                <div>
+                
+                    <h3>
+                        OTHER
+                    </h3>
+                    
+                 
+                   
+
+                </div>
+
+                <span>
+                    04
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         THINGS I LOVE
+    ================================================== -->
+
+    <section>
+
+
+        <div class="love-header">
+
+
+            <h2>
+
+                THINGS I <span class="red">
+                    LOVE
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                A few things that keep me
+                motivated and happy.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="love-grid">
+
+
+            <img src="image/coding.pic.jpg"
+                 alt="Coding">
+
+
+            <img src="image/photography.jpeg"
+                 alt="photography">
+
+
+            <img src="image/coding.pic.jpg"
+                 alt="cricket">
+
+
+            <img src="image/travel.pic.jpeg"
+                 alt="Travel">
+
+
+        </div>
+
+
+    </section>
+
+  <!-- =================================================
+         CURRENTLY LEARNING
+    ================================================== -->
+
+    <section>
+
+
+        <h2 class="section-title">
+
+            CURRENTLY <span class="red">
+                LEARNING
+            </span>
+
+        </h2>
+
+
+        <div class="learning">
+
+
+            <span>
+                JAVA
+            </span>
+
+
+            <span>
+                DATA STRUCTURES
+            </span>
+
+
+            <span>
+                ALGORITHMS
+            </span>
+
+
+            <span>
+                HTML
+            </span>
+
+
+            <span>
+                CSS
+            </span>
+
+
+            <span>
+                GITHUB
+            </span>
+
+
+            <span>
+                WEB DEVELOPMENT
+            </span>
+
+
+            <span>
+                PROBLEM SOLVING
+            </span>
+
+
+        </div>
+
+
+    </section>
+
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
+
+    <section class="contact"
+             id="contact">
+
+
+        <div class="contact-left">
+
+
+            <h2>
+
+                LOOKING FORWARD
+
+                <br>
+
+                TO WORKING WITH
+
+                <br>
+
+                <span>
+                    EVERYONE!
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Have an idea, project or simply
+                want to connect? Feel free to
+                reach out.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="contact-right">
+
+
+            <div class="contact-item">
+
+                <small>
+                    EMAIL ADDRESS
+                </small>
+
+                <a href="mailto:aparnadixit006@gmail.com" target="_blank">
+
+                    aparnadixit006@gmail.com
+
+                </a>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <small>
+                    GITHUB
+                </small>
+
+                <a href="https://github.com/Aparnadixit123" target="_blank">
+
+                    Aparnadixit123
+
+                </a>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <small>
+                    LINKEDIN
+                </small>
+
+                <a href="https://www.linkedin.com/in/aparna-dixit-490194380/" target="_blank">
+
+                    Aparna Dixit
+
+                </a>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <small>
+                    Leetcode
+                </small>
+         <a href="https://leetcode.com/u/aparna_dixit/" target="_blank">MY PROFILE</a>
+
+        
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+   
+
+    </div>
+</body>
+</html>

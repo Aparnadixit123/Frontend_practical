@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anime Verse</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* HEADER */
+
+        header {
+            background-color: #111;
+            border-bottom: 1px solid #333;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        .premium {
+            color: orange;
+            font-weight: bold;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            text-align: center;
+            padding: 30px 10px;
+            background: linear-gradient(180deg, #111, #080808);
+        }
+
+        .search-box input {
+            width: 400px;
+            max-width: 80%;
+            padding: 13px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 13px 20px;
+            border: none;
+            background-color: orange;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .search-box button:hover {
+            background-color: #ffb733;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 380px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #080808 20%,
+                    rgba(8,8,8,0.85),
+                    rgba(8,8,8,0.3)
+                ),
+                url("https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/attack-on-titan.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: orange;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .hero button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: white;
+        }
+
+        /* LANGUAGE MENU */
+
+        .languages {
+            text-align: center;
+            padding: 25px 5%;
+            border-bottom: 1px solid #222;
+        }
+
+        .languages h2 {
+            margin-bottom: 15px;
+            color: orange;
+        }
+
+        .languages a {
+            display: inline-block;
+            color: #ddd;
+            text-decoration: none;
+            margin: 7px 12px;
+            font-size: 15px;
+        }
+
+        .languages a:hover {
+            color: orange;
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 50px 5%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid orange;
+            padding-left: 12px;
+        }
+
+        /* ANIME GRID */
+
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .anime-card {
+            background-color: #121212;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #252525;
+            transition: 0.3s;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-8px);
+            border-color: orange;
+            box-shadow: 0 10px 30px rgba(255,165,0,0.15);
+        }
+
+        .anime-card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .anime-info {
+            padding: 15px;
+        }
+
+        .anime-info h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .anime-info p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .watch {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 15px;
+            background-color: orange;
+            color: black;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .watch:hover {
+            background-color: white;
+        }
+
+        /* PREMIUM */
+
+        .premium-section {
+            margin: 20px 5% 50px;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #171717, #241600);
+            border: 1px solid #4a3100;
+            border-radius: 10px;
+        }
+
+        .premium-section h2 {
+            color: orange;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .premium-section p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .plan {
+            width: 220px;
+            padding: 25px;
+            background-color: #0c0c0c;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+
+        .plan h3 {
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #111;
+            padding: 45px 7% 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-about {
+            max-width: 350px;
+        }
+
+        .footer-about img {
+            width: 160px;
+            margin-bottom: 15px;
+        }
+
+        .footer-about p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .footer-column h3 {
+            color: orange;
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: orange;
+        }
+
+        .social {
+            margin-top: 25px;
+        }
+
+        .social img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            margin-right: 12px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 1000px) {
+            .anime-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .anime-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .anime-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 50px 7%;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .anime-card img {
+                height: 400px;
+            }
+
+            .search-box input {
+                width: 65%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <!-- Change this image path if your logo is somewhere else -->
+        <img
+            class="logo"
+            src="images/AVLOGO.jpeg"
+            alt="Anime Verse Logo"
+        >
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#popular">Popular</a>
+            <a href="#new">New</a>
+            <a href="#categories">Categories</a>
+            <a href="#history">History</a>
+            <a href="#premium" class="premium">Try Premium</a>
+        </nav>
+
+    </header>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Search your favourite anime..."
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>ANIME VERSE</h1>
+
+            <h2>Your Universe of Anime</h2>
+
+            <p>
+                Discover legendary stories, unforgettable characters,
+                epic battles and emotional journeys. Explore your favourite
+                anime and find your next adventure.
+            </p>
+
+            <button>
+                Explore Anime
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LANGUAGES -->
+
+    <section class="languages" id="categories">
+
+        <h2>Available Languages</h2>
+
+        <a href="#">Hindi</a>
+        <a href="#">English</a>
+        <a href="#">Tamil</a>
+        <a href="#">Telugu</a>
+        <a href="#">Kannada</a>
+        <a href="#">Malayalam</a>
+        <a href="#">Bengali</a>
+        <a href="#">Marathi</a>
+        <a href="#">Gujarati</a>
+        <a href="#">Bhojpuri</a>
+        <a href="#">Haryanvi</a>
+        <a href="#">Punjabi</a>
+        <a href="#">Korean</a>
+        <a href="#">Japanese</a>
+        <a href="#">Chinese</a>
+        <a href="#">Thai</a>
+
+    </section>
+
+
+    <!-- MOST POPULAR -->
+
+    <section class="section" id="popular">
+
+        <h2 class="section-title">
+            Most Popular Anime
+        </h2>
+
+        <div class="anime-grid">
+
+
+            <!-- ATTACK ON TITAN -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/AOT.jpg"
+                    alt="Attack on Titan"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Attack on Titan</h3>
+
+                    <p>
+                        Humanity fights for survival against mysterious
+                        giant Titans threatening their existence.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEMON SLAYER -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/demonslayer.jpg"
+                    alt="Demon Slayer"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Demon Slayer</h3>
+
+                    <p>
+                        Tanjiro becomes a demon slayer after tragedy
+                        strikes his family.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- JUJUTSU KAISEN -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/jjk.jpg"
+                    alt="Jujutsu Kaisen"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Jujutsu Kaisen</h3>
+
+                    <p>
+                        Yuji Itadori enters the world of curses and
+                        supernatural battles.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEATH NOTE -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/death-note.jpg"
+                    alt="Death Note"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Death Note</h3>
+
+                    <p>
+                        A mysterious notebook gives Light Yagami the
+                        power to decide who lives and dies.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOLO LEVELING -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/solo-leveling.jpg"
+                    alt="Solo Leveling"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Solo Leveling</h3>
+
+                    <p>
+                        Sung Jinwoo begins as the weakest hunter and
+                        gains the ability to level up.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ONE PIECE -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/one-piece.jpg"
+                    alt="One Piece"
+                >
+
+                <div class="anime-info">
+
+                    <h3>One Piece</h3>
+
+                    <p>
+                        Luffy and the Straw Hat Pirates search for the
+                        legendary One Piece treasure.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRAGON BALL -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/dragon-ball.jpg"
+                    alt="Dragon Ball Super"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Dragon Ball Super</h3>
+
+                    <p>
+                        Goku and his friends face powerful enemies
+                        across multiple universes.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- YOUR NAME -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/your-name.jpg"
+                    alt="Your Name"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Your Name</h3>
+
+                    <p>
+                        Two teenagers mysteriously begin switching
+                        bodies and develop an unforgettable connection.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HAIKYUU -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/haikyuu.jpg"
+                    alt="Haikyuu"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Haikyuu!!</h3>
+
+                    <p>
+                        Hinata dreams of becoming a great volleyball
+                        player despite his small height.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLUE LOCK -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/blue-lock.jpg"
+                    alt="Blue Lock"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Blue Lock</h3>
+
+                    <p>
+                        Talented strikers compete in a ruthless program
+                        to become Japan's ultimate forward.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- VINLAND SAGA -->
+
+            <div class="anime-card">
+
+                <img  src="images/vinland-saga.jpg"
+                    alt="Vinland Saga"
+                
+                >
+
+                <div class="anime-info">
+
+                    <h3>Vinland Saga</h3>
+
+                    <p>
+                        Thorfinn's journey moves from revenge and war
+                        toward peace and purpose.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NARUTO -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/naruto.jpg"
+                    alt="Naruto Shippuden"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Naruto Shippuden</h3>
+
+                    <p>
+                        Naruto returns stronger and continues his
+                        journey toward becoming Hokage.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLASSROOM OF ELITE -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/COTE.jpg"
+                    alt="Classroom of the Elite"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Classroom of the Elite</h3>
+
+                    <p>
+                        Students compete through intelligence,
+                        strategy and psychological manipulation.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOKYO REVENGERS -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/tokyo-revengers.jpg"
+                    alt="Tokyo Revengers"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Tokyo Revengers</h3>
+
+                    <p>
+                        Takemichi travels through time to change the
+                        future and save the people he loves.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLEACH -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/bleach.jpg"
+                    alt="Bleach"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Bleach</h3>
+
+                    <p>
+                        Ichigo becomes a Soul Reaper and protects
+                        humanity from dangerous spirits.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DR STONE -->
+
+            <div class="anime-card">
+
+                <img
+                    src="images/dr.stone.jpg"
+                    alt="Dr Stone"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Dr. Stone</h3>
+
+                    <p>
+                        Senku uses science and intelligence to rebuild
+                        civilization after humanity turns to stone.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEW ANIME -->
+
+    <section class="section" id="new">
+
+        <h2 class="section-title">
+            New & Trending
+        </h2>
+
+        <div class="anime-grid">
+
+            <div class="anime-card">
+
+                <img
+                    src="images/solo-leveling.jpg"
+                    alt="Solo Leveling"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Solo Leveling</h3>
+
+                    <p>
+                        One of the hottest fantasy anime experiences.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="anime-card">
+
+                <img
+                    src="images/demonslayer.jpg"
+                    alt="Demon Slayer"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Demon Slayer</h3>
+
+                    <p>
+                        Experience Tanjiro's journey as a demon slayer.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="anime-card">
+
+                <img
+                    src="images/jjk.jpg"
+                    alt="Jujutsu Kaisen"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Jujutsu Kaisen</h3>
+
+                    <p>
+                        Enter a world filled with powerful curses.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="anime-card">
+
+                <img
+                    src="images/AOT.jpg"
+                    alt="Attack on Titan"
+                >
+
+                <div class="anime-info">
+
+                    <h3>Attack on Titan</h3>
+
+                    <p>
+                        A legendary story of survival, freedom and war.
+                    </p>
+
+                    <a href="#" class="watch">
+                        Watch Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PREMIUM -->
+
+    <section class="premium-section" id="premium">
+
+        <h2>⭐ Try Anime Verse Premium</h2>
+
+        <p>
+            Enjoy anime without ads and unlock premium features.
+        </p>
+
+        <div class="plans">
+
+            <div class="plan">
+
+                <h3>Fan</h3>
+
+                <div class="price">₹79/month</div>
+
+                <p>
+                    Ad-free streaming on one device.
+                </p>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>Mega Fan</h3>
+
+                <div class="price">₹99/month</div>
+
+                <p>
+                    Stream on up to four devices,
+                    offline downloads and Game Vault.
+                </p>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>Annual Mega Fan</h3>
+
+                <div class="price">₹475/year</div>
+
+                <p>
+                    Same Mega Fan benefits at a discounted
+                    annual price.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-top">
+
+
+            <div class="footer-about">
+
+                <img
+                    src="images/AVLOGO.jpeg"
+                    alt="Anime Verse"
+                >
+
+                <p>
+                    Welcome to Anime Verse, your ultimate destination
+                    for discovering the best in anime entertainment.
+                </p>
+
+
+                <div class="social">
+
+                    <a href="#">
+                        <img
+                            src="images/youtube-pic.jpg"
+                            alt="YouTube"
+                        >
+                    </a>
+
+                    <a href="#">
+                        <img
+                            src="images/insta-logo.jpg"
+                            alt="Instagram"
+                        >
+                    </a>
+
+                    <a href="#">
+                        <img
+                            src="images/telegram-logo.jpg"
+                            alt="Telegram"
+                        >
+                    </a>
+
+                    <a href="#">
+                        <img
+                            src="images/x-logo.jpg"
+                            alt="X"
+                        >
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="#popular">Browse Popular</a>
+                <a href="#new">Browse Simulcast</a>
+                <a href="#">Release Calendar</a>
+                <a href="#">News</a>
+                <a href="#">Games</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Resources</h3>
+
+                <a href="#">About</a>
+                <a href="#">Get the Apps</a>
+                <a href="#">Jobs</a>
+                <a href="#">Help Center</a>
+                <a href="#">Advertising Inquiries</a>
+                <a href="#">Press Inquiries</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Account</h3>
+
+                <a href="#">Start a Free Trial</a>
+                <a href="#">Create Account</a>
+                <a href="#">Log in</a>
+                <a href="#">Redeem Gift Card</a>
+
+            </div>
+
+        </div>
+
+
+        
+    </footer>
+
+</body>
+</html>
