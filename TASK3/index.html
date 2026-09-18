@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- =========================
+       FIXED SIDEBAR
+       ========================= -->
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">E</div>
+
+      <div>
+        <h1>EduBridge</h1>
+        <p>Smart learning platform</p>
+      </div>
+    </div>
+
+    <p class="sidebar-title">Main menu</p>
+
+    <nav>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#dashboard" class="active">
+            <span class="menu-icon">⌂</span>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="#learning">
+            <span class="menu-icon">📚</span>
+            Learning paths
+          </a>
+        </li>
+
+        <li>
+          <a href="#product">
+            <span class="menu-icon">🎓</span>
+            Course pack
+          </a>
+     
+        </li>
+
+        <li>
+          <a href="#blog">
+            <span class="menu-icon">📝</span>
+            Blog
+          </a>
+        </li>
+
+        <li>
+          <a href="#mentorship">
+            <span class="menu-icon">🤝</span>
+            Mentorship
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <p class="sidebar-title">Account</p>
+
+    <nav>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#profile">
+            <span class="menu-icon">👤</span>
+            Profile
+          </a>
+        </li>
+
+        <li>
+          <a href="#settings">
+            <span class="menu-icon">⚙</span>
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <strong>Learning tip</strong>
+      Build one small project after every major topic. Practical work helps you remember concepts and gives you portfolio evidence.
+    </div>
+  </aside>
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+  <main class="main-content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          ☰
+        </button>
+
+        <h2 id="dashboard">Student Dashboard</h2>
+        <p>Learn practical skills and build projects step by step.</p>
+      </div>
+
+      <div class="profile">
+        <div class="profile-avatar">S</div>
+        <span>Student Account</span>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="section">
+      <div class="hero">
+        <div class="hero-content">
+          <h2>Build skills for the digital future</h2>
+
+          <p>
+            EduBridge is a smart education concept designed to help students
+            find structured learning paths, practical projects, mentorship, and
+            technology opportunities.
+          </p>
+
+          <a href="#learning" class="hero-button">
+            Explore learning path
+          </a>
+        </div>
+
+        <div class="hero-symbol">💡</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3>12</h3>
+          <p>Learning modules</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>8</h3>
+          <p>Practice projects</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>5</h3>
+          <p>Career skills</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Project-focused learning</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING SECTION -->
+    <section class="section" id="learning">
+      <h2 class="section-heading">Recommended learning path</h2>
+
+      <p class="section-description">
+        A beginner-friendly frontend path starts with HTML for structure, CSS
+        for design and responsive layouts, and JavaScript for interaction.
+        Learners can then apply those skills by building a dashboard, course
+        page, or educational resource website.
+      </p>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3>01</h3>
+          <p>Learn HTML page structure</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>02</h3>
+          <p>Practice CSS box model</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>03</h3>
+          <p>Create Flexbox layouts</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>04</h3>
+          <p>Make pages responsive</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT CARD SECTION -->
+    <section class="section" id="product">
+      <h2 class="section-heading">Product card using the box model</h2>
+
+      <p class="section-description">
+        This course card demonstrates the three important visible parts of the
+        CSS box model: margin outside the card, border around the card, and
+        padding between the border and the content.
+      </p>
+
+      <div class="product-wrapper">
+        <article class="product-card">
+          <div class="product-image">
+            Frontend Starter Pack
+          </div>
+
+          <h3>Frontend + Smart Education</h3>
+
+          <p>
+            A practical starter pack for students who want to learn HTML, CSS,
+            Flexbox, responsive design, and project planning through an
+            education-focused website.
+          </p>
+
+          <div class="product-price">Free learning resource</div>
+
+          <a href="#blog" class="product-button">
+            Start learning
+          </a>
+
+          <p class="box-model-label">
+            Margin: outside space | Border: blue outline | Padding: inside space
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section" id="blog">
+      <h2 class="section-heading">Latest learning articles</h2>
+
+      <p class="section-description">
+        These articles focus on practical skills that help students understand
+        web development and turn ideas into working projects.
+      </p>
+
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <span class="blog-category">Smart education</span>
+
+          <h3>What is smart education?</h3>
+
+          <div class="blog-meta">
+            EduBridge Learning Team · 5-minute read
+          </div>
+
+          <p>
+            Smart education combines teaching methods, digital tools, learning
+            resources, and feedback to make learning more accessible and
+            personalized. A good platform should not only display lessons but
+            also help learners practice, receive feedback, and track progress.
+          </p>
+
+          <a href="#learning" class="read-more">
+            Read article
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-category">Frontend development</span>
+
+          <h3>How to begin frontend development</h3>
+
+          <div class="blog-meta">
+            EduBridge Learning Team · 7-minute read
+          </div>
+
+          <p>
+            Start with HTML elements such as headings, paragraphs, links, and
+            forms. Continue with CSS selectors, colors, spacing, borders, and
+            responsive layouts. After that, use JavaScript to respond to user
+            actions such as clicks, form submissions, and menu toggles.
+          </p>
+
+          <a href="#product" class="read-more">
+            Read article
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-category">Project building</span>
+
+          <h3>From an idea to a useful project</h3>
+
+          <div class="blog-meta">
+            EduBridge Learning Team · 6-minute read
+          </div>
+
+          <p>
+            Begin with a clear problem statement. Identify the users, select
+            the smallest useful feature set, and create a simple prototype.
+            For example, a student platform could begin with course cards,
+            mentor information, and a progress dashboard before adding complex
+            features.
+          </p>
+
+          <a href="#dashboard" class="read-more">
+            Read article
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MENTORSHIP SECTION -->
+    <section class="section" id="mentorship">
+      <h2 class="section-heading">Mentorship and practice</h2>
+
+      <p class="section-description">
+        Effective mentorship includes clear goals, regular feedback, code
+        reviews, and project discussions. Students can prepare specific
+        questions, share what they have tried, and use feedback to improve
+        their next version.
+      </p>
+    </section>
+
+   
+  </main>
+
+  <!-- =========================
+       JAVASCRIPT FOR MOBILE MENU
+       ========================= -->
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarLinks = document.querySelectorAll(".sidebar a");
+
+    menuToggle.addEventListener("click", function () {
+      sidebar.classList.toggle("open");
+    });
+
+    sidebarLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 700) {
+          sidebar.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

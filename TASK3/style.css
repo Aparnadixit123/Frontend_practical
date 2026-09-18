@@ -1,0 +1,645 @@
+/* =========================
+       1. RESET AND GLOBAL STYLES
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --sidebar: #111827;
+      --sidebar-light: #1f2937;
+      --text-dark: #111827;
+      --text: #374151;
+      --text-light: #6b7280;
+      --background: #f3f4f6;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --success: #059669;
+      --sidebar-width: 250px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* =========================
+       2. FIXED LEFT SIDEBAR
+       ========================= */
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      width: var(--sidebar-width);
+      height: 100vh;
+
+      padding: 24px 16px;
+      overflow-y: auto;
+
+      color: var(--white);
+      background: var(--sidebar);
+      border-right: 1px solid #374151;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 0 10px 24px;
+      border-bottom: 1px solid #374151;
+    }
+
+    .brand-logo {
+      display: grid;
+      place-items: center;
+
+      width: 40px;
+      height: 40px;
+
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      color: var(--white);
+    }
+
+    .brand p {
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    .sidebar-title {
+      margin: 28px 10px 10px;
+
+      color: #9ca3af;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 6px;
+    }
+
+    .sidebar-menu a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 12px 10px;
+
+      color: #d1d5db;
+      border-radius: 8px;
+      transition: 0.2s ease;
+    }
+
+    .sidebar-menu a:hover,
+    .sidebar-menu a.active {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .menu-icon {
+      width: 24px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .sidebar-footer {
+      margin-top: 40px;
+      padding: 16px 10px;
+
+      color: #d1d5db;
+      background: var(--sidebar-light);
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .sidebar-footer strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    /* =========================
+       3. MAIN CONTENT
+       ========================= */
+
+    .main-content {
+      min-height: 100vh;
+      margin-left: var(--sidebar-width);
+      padding: 30px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      margin-bottom: 30px;
+      padding: 20px 24px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .topbar h2 {
+      color: var(--text-dark);
+      font-size: 24px;
+    }
+
+    .topbar p {
+      margin-top: 4px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-avatar {
+      display: grid;
+      place-items: center;
+
+      width: 42px;
+      height: 42px;
+
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .profile span {
+      color: var(--text-dark);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .section-heading {
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      font-size: 24px;
+    }
+
+    .section-description {
+      max-width: 800px;
+      margin-bottom: 22px;
+      color: var(--text-light);
+    }
+
+    /* =========================
+       4. HERO SECTION
+       ========================= */
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      padding: 35px;
+      color: var(--white);
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
+      border-radius: 16px;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero h2 {
+      margin-bottom: 12px;
+      font-size: 32px;
+    }
+
+    .hero p {
+      margin-bottom: 20px;
+      color: #dbeafe;
+    }
+
+    .hero-button {
+      display: inline-block;
+
+      padding: 11px 18px;
+
+      color: var(--primary-dark);
+      background: var(--white);
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .hero-button:hover {
+      background: #dbeafe;
+    }
+
+    .hero-symbol {
+      display: grid;
+      place-items: center;
+
+      width: 130px;
+      height: 130px;
+
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      font-size: 60px;
+    }
+
+    /* =========================
+       5. STATISTICS CARDS
+       ========================= */
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .stat-card {
+      flex: 1 1 180px;
+
+      padding: 20px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat-card h3 {
+      margin-bottom: 5px;
+      color: var(--primary);
+      font-size: 28px;
+    }
+
+    .stat-card p {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* =========================
+       6. PRODUCT CARD
+       CSS BOX MODEL EXAMPLE
+       ========================= */
+
+    .product-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-card {
+      /*
+        CSS BOX MODEL:
+
+        margin  = space outside the card
+        border  = visible line around the card
+        padding = space inside the card
+      */
+
+      width: 100%;
+      max-width: 360px;
+
+      margin: 20px;
+      padding: 18px;
+
+      background: var(--white);
+      border: 3px solid var(--primary);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .product-image {
+      display: grid;
+      place-items: center;
+
+      height: 170px;
+      margin-bottom: 16px;
+
+      color: var(--white);
+      background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+      border-radius: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .product-card h3 {
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      font-size: 20px;
+    }
+
+    .product-card p {
+      margin-bottom: 14px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .product-price {
+      margin-bottom: 15px;
+      color: var(--success);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .product-button {
+      display: inline-block;
+
+      padding: 10px 16px;
+
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .product-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .box-model-label {
+      margin-top: 18px;
+      padding-top: 14px;
+
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+    }
+
+    /* =========================
+       7. THREE-COLUMN BLOG
+       FLEXBOX LAYOUT
+       ========================= */
+
+    .blog-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .blog-card {
+      display: flex;
+      flex: 1 1 280px;
+      flex-direction: column;
+
+      min-height: 310px;
+      padding: 20px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .blog-category {
+      display: inline-block;
+      align-self: flex-start;
+
+      margin-bottom: 14px;
+      padding: 5px 9px;
+
+      color: var(--primary-dark);
+      background: #dbeafe;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .blog-card h3 {
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      font-size: 20px;
+    }
+
+    .blog-meta {
+      margin-bottom: 14px;
+      color: var(--text-light);
+      font-size: 12px;
+    }
+
+    .blog-card p {
+      flex-grow: 1;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .read-more {
+      align-self: flex-start;
+
+      margin-top: 18px;
+      padding: 8px 12px;
+
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .read-more:hover {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    /* =========================
+       8. FOOTER
+       ========================= */
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+
+      color: var(--text-light);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* =========================
+       9. MOBILE MENU BUTTON
+       ========================= */
+
+    .menu-toggle {
+      display: none;
+
+      padding: 8px 12px;
+
+      color: var(--white);
+      background: var(--primary);
+      border: none;
+      border-radius: 6px;
+      font-size: 20px;
+    }
+
+    /* =========================
+       10. RESPONSIVE DESIGN
+       ========================= */
+
+    @media (max-width: 900px) {
+      :root {
+        --sidebar-width: 215px;
+      }
+
+      .main-content {
+        padding: 22px;
+      }
+
+      .hero {
+        padding: 28px;
+      }
+
+      .hero h2 {
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      :root {
+        --sidebar-width: 230px;
+      }
+
+      /*
+        On mobile, the sidebar remains fully on the left.
+        It starts hidden outside the screen and opens with the button.
+      */
+ .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        padding: 16px;
+      }
+
+      .topbar h2 {
+        font-size: 20px;
+      }
+
+      .profile {
+        display: none;
+      }
+
+      .hero {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      .hero-symbol {
+        width: 90px;
+        height: 90px;
+        font-size: 40px;
+      }
+
+      .stats {
+        flex-direction: column;
+      }
+
+      .stat-card {
+        flex-basis: auto;
+      }
+
+      .blog-grid {
+        flex-direction: column;
+      }
+
+      .blog-card {
+        flex-basis: auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .main-content {
+        padding: 10px;
+      }
+
+      .topbar {
+        gap: 10px;
+      }
+
+      .hero {
+        padding: 20px;
+      }
+
+      .hero h2 {
+        font-size: 22px;
+      }
+
+      .product-card {
+        margin: 10px 0;
+      }
+    }
